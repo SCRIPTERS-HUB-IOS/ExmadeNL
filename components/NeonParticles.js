@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
+import { loadFull } from '@tsparticles/core'; // FIXED import path
 
 export default function NeonParticles() {
   const particlesInit = useCallback(async (engine) => {
@@ -40,7 +40,10 @@ export default function NeonParticles() {
         straight: false,
       },
       number: { density: { enable: true, area: 800 }, value: 50 },
-      opacity: { value: 0.7, anim: { enable: true, speed: 1, opacity_min: 0.3, sync: false } },
+      opacity: {
+        value: 0.7,
+        anim: { enable: true, speed: 1, opacity_min: 0.3, sync: false },
+      },
       shape: { type: "circle" },
       size: { value: { min: 1, max: 3 } },
     },
