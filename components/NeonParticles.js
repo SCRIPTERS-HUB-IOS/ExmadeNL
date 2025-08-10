@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
-import { loadFull } from '@tsparticles/core'; // FIXED import path
+import { loadFull } from 'tsparticles-engine';
 
 export default function NeonParticles() {
   const particlesInit = useCallback(async (engine) => {
@@ -8,9 +8,7 @@ export default function NeonParticles() {
   }, []);
 
   const particlesOptions = {
-    background: {
-      color: { value: "#000" },
-    },
+    background: { color: { value: "#000" } },
     fpsLimit: 60,
     interactivity: {
       events: {
